@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
-  devise_for :users
   root to: "homes#top"
-  resources :users
+  devise_for :users
 
-  resources :post_images, only: [:new, :index, :show]
+  resources :post_images, only: [:new, :create, :index, :show]
+
+  resources :users
 
   get "homes/about" => "homes#about", as: "about"
 
